@@ -3,48 +3,78 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Página Responsiva</title>
+  <title>Blog Interativo</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
   <header>
     <div class="nav-container">
-      <div class="logo">MeuSite</div>
-      <ul class="nav-links">
-        <li><a href="#inicio">Início</a></li>
-        <li><a href="#recursos">Recursos</a></li>
-        <li><a href="#sobre">Sobre</a></li>
-      </ul>
+      <div class="logo">DevBlog</div>
+      
+      <nav class="nav-links" id="navLinks">
+        <a href="#inicio">Início</a>
+        <a href="#artigos">Artigos</a>
+        <a href="#sobre">Sobre</a>
+      </nav>
+
+      <div class="header-actions">
+        <button id="btnTema" class="btn-icon" aria-label="Alternar Tema">🌙</button>
+        <button id="btnMenu" class="btn-icon mobile-only" aria-label="Abrir Menu">☰</button>
+      </div>
     </div>
   </header>
 
   <section class="hero" id="inicio">
-    <h1>Design Leve e Responsivo</h1>
-    <p>Esta página se adapta perfeitamente a qualquer dispositivo: computadores, tablets ou smartphones.</p>
-    <a href="#recursos" class="btn">Saiba Mais</a>
+    <h1>Explore o Mundo da Tecnologia</h1>
+    <p>Artigos, tutoriais e dicas sobre desenvolvimento web e design.</p>
   </section>
 
-  <main id="recursos">
+  <main id="artigos">
+    <div class="filtros">
+      <button class="btn-filtro active" data-categoria="todos">Todos</button>
+      <button class="btn-filtro" data-categoria="frontend">Front-end</button>
+      <button class="btn-filtro" data-categoria="design">Design</button>
+      <button class="btn-filtro" data-categoria="carreira">Carreira</button>
+    </div>
+
     <div class="grid-cards">
-      <div class="card">
-        <h3>Flexível</h3>
-        <p>Utiliza CSS Grid com `auto-fit` para reorganizar os cartões conforme a largura da tela muda.</p>
-      </div>
-      <div class="card">
-        <h3>Rápido</h3>
-        <p>Feito apenas com HTML e CSS puro, sem necessidade de bibliotecas externas pesadas.</p>
-      </div>
-      <div class="card">
-        <h3>Acessível</h3>
-        <p>Estrutura semântica limpa que garante boa leitura em leitores de tela e motores de busca.</p>
-      </div>
+      <article class="card" data-categoria="frontend">
+        <span class="badge">Front-end</span>
+        <h3>HTML e CSS Responsivo</h3>
+        <p>Aprenda a criar páginas que se adaptam a qualquer tamanho de tela com Flexbox e CSS Grid.</p>
+        <div class="card-footer">
+          <button class="btn-like">❤️ <span class="like-count">12</span></button>
+          <a href="#" class="ler-mais">Ler artigo →</a>
+        </div>
+      </article>
+
+      <article class="card" data-categoria="design">
+        <span class="badge">Design</span>
+        <h3>Principios de UX/UI</h3>
+        <p>Descubra como projetar interfaces amigáveis e centradas na experiência do usuário.</p>
+        <div class="card-footer">
+          <button class="btn-like">❤️ <span class="like-count">8</span></button>
+          <a href="#" class="ler-mais">Ler artigo →</a>
+        </div>
+      </article>
+
+      <article class="card" data-categoria="carreira">
+        <span class="badge">Carreira</span>
+        <h3>Primeiro Emprego na TI</h3>
+        <p>Dicas essenciais para preparar seu portfólio e mandar bem nas entrevistas técnicas.</p>
+        <div class="card-footer">
+          <button class="btn-like">❤️ <span class="like-count">25</span></button>
+          <a href="#" class="ler-mais">Ler artigo →</a>
+        </div>
+      </article>
     </div>
   </main>
 
   <footer>
-    <p>&copy; 2026 - Todos os direitos reservados.</p>
+    <p>&copy; 2026 DevBlog - Todos os direitos reservados.</p>
   </footer>
 
+  <script src="script.js"></script>
 </body>
 </html>
